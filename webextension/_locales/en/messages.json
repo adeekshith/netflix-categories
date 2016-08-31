@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message":"Custom Search",
+    "description":"Extension name"
+  },
+  "extShortName": {
+    "message":"Search",
+    "description":"Extension short name"
+  },
+  "extDescription": {
+    "message":"Custom search browser plugin for organizations.",
+    "description":"Extension description"
+  }
+}

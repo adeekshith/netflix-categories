@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extName__",
+  "short_name": "__MSG_extShortName__",
+  "version": "0.1.0",
+  "applications": {
+    "gecko": {
+      "id": "custom-search@deekshith.in"
+    }
+  },
+  "minimum_chrome_version": "45.0",
+  "minimum_opera_version": "32.0",
+
+  "default_locale": "en",
+  "description": "__MSG_extDescription__",
+  "icons": {
+    "16":"images/brand/16.png",
+    "48":"images/brand/48.png",
+    "128":"images/brand/128.png"
+  },
+
+  "author": "Deekshith Allamaneni",
+  "homepage_url": "http://deekshith.in/",
+  "browser_action": {
+    "default_icon": "images/brand/128.png",
+    "default_popup": "browser-action/popup.html",
+    "default_title": "Custom Search"
+  },
+  "background": {
+    "scripts": [
+      "js/libs/dov-utils.js",
+      "js/core/config.js",
+      "js/core/background.js"
+    ],
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "data/user-preferences-default.json"
+  ],
+  "permissions": [
+    "storage",
+    "*://*/*",
+    "history",
+    "contextMenus"
+  ]
+}
