@@ -1,0 +1,51 @@
+{
+  "application" : {
+    "name" : "Better Bitbucket",
+    "app_id" : "better-bitbucket@deekshith.in",
+    "version" : "v0.1"
+  },
+  "search_engines" : [
+    {
+      "category": "General",
+      "name": "DuckDuckGo",
+      "api": "https://duckduckgo.com/?q=%s",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "General",
+      "name": "StartPage",
+      "api": "https://www.startpage.com/do/metasearch.pl?query=%s",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "Education",
+      "name": "Wolfram|Alpha",
+      "api": "https://www.wolframalpha.com/input/?i=%s",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "Education",
+      "name": "Google Scholar",
+      "api": "https://scholar.google.com/scholar?hl=en&q=%s",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "Programming",
+      "name": "WolframLanguage",
+      "api": "http://reference.wolfram.com/search/?query=%s",
+      "pinned": false,
+      "last_used":0
+    }
+  ],
+  "user_preferences" : {
+    "version" : "0.1",
+    "extension_enable": true,
+    "privacy" : {
+      "collect_stats" : false
+    }
+  }
+}

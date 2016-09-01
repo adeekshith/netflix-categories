@@ -28,9 +28,8 @@
   },
   "background": {
     "scripts": [
-      "js/libs/dov-utils.js",
-      "js/core/config.js",
-      "js/core/background.js"
+      "libs/dov-utils.js",
+      "core/js/config.js"
     ],
     "persistent": false
   },
