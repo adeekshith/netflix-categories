@@ -27,11 +27,6 @@ function restorePopupOptions (userPrefDefaultJsonStr) {
         let thisUserPreferences = JSON.parse(items.user_config);
         let thisUserConfig = new UserConfig(thisUserPreferences);
         //var thisUserIsDovIconEnabled = thisUserConfig.isIconBesideDocLinksEnabled();
-        if (thisUserConfig.isExtensionEnabled() === true) {
-            $('#toggle-enable-dov').bootstrapToggle('on');
-        } else {
-            $('#toggle-enable-dov').bootstrapToggle('off');
-        }
     });
 }
 
