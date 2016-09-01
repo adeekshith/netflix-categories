@@ -28,12 +28,12 @@ function getDefPrefsRestorePopupOptions () {
 function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
         function generateSearchEngineListNodes(searchEngineList) {
             return searchEngineList.reduce((listHTML, searchEngineItem) => {
-                return listHTML+`<button class="list-group-item">${searchEngineItem.name}</button>`;
+                return listHTML+`<button id="search-item-${generateUuid()}" class="list-group-item">${searchEngineItem.name}</button>`;
             },"");
         }
 
         function generateSearchEngineCategoryListNodes(category) {
-            let collapseID = "search-category-"+category;
+            let collapseID = `search-category-${generateUuid()}`;
             let categoryHtml = `
             <div class="panel panel-default">
                     <div class="list-group status">
