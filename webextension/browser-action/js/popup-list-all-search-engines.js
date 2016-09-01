@@ -27,7 +27,9 @@ function getDefPrefsRestorePopupOptions () {
 
 function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
         function generateSearchEngineListNodes(searchEngineList) {
-            return `<button class="list-group-item">Test Button 1</button>`;
+            return searchEngineList.reduce((listHTML, searchEngineItem) => {
+                return listHTML+`<button class="list-group-item">${searchEngineItem.name}</button>`;
+            },"");
         }
 
         function generateSearchEngineCategoryListNodes(category) {
@@ -42,9 +44,7 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
 
                 <div id="${collapseID}" class="panel-collapse collapse">
                     <div class="list-group">
-                        <button class="list-group-item">Test Button 1</button>
-                        <button class="list-group-item">Test Button 2</button>
-                        <button class="list-group-item">Test Button 3</button>
+                        ${generateSearchEngineListNodes(thisUserConfig.getSearchEnginesByCategory(category))}
                     </div>
                 </div>
             </div>
