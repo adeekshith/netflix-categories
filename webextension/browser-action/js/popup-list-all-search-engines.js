@@ -5,10 +5,6 @@
 
 "use strict";
 
-function JustForFun(response) {
-    return response;
-}
-
 function getDefPrefsRestorePopupOptions () {
     textFileLoad(chrome.extension.getURL("../../data/data.json")).then(function(response) {
         chrome.storage.local.get({
