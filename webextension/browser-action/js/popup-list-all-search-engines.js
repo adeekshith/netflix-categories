@@ -38,7 +38,7 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
             <div class="panel panel-default">
                     <div class="list-group status">
                         <button class="list-group-item btn btn-lg" data-toggle="collapse" data-parent="#accordion" href="#${collapseID}">
-                            <span class="glyphicon glyphicon-file"></span>${category}
+                            ${category}
                         </button>
                     </div>
 
