@@ -10,7 +10,6 @@ function getDefPrefsRestorePopupOptions () {
         chrome.storage.local.get({
             user_config: response
         }, function (items) {
-            console.log("items.user_config: ", items.user_config);
             restoreListAllSearchEnginesPopupOptions(
                 new UserConfig(JSON.parse(response))
             );
