@@ -20,11 +20,22 @@ function getDefPrefsRestorePopupOptions () {
     });
 }
 
+function processSearchEngineButtonClick(thisEvent) {
+    if (thisEvent.target !== thisEvent.currentTarget) {
+        let searchUrl = thisEvent.target.getAttribute("search-url");
+        if (searchUrl !== null && searchUrl.length >0) {
+            chrome.tabs.create({
+                url: searchUrl
+            });
+        }
+    }
+}
 
 function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
         function generateSearchEngineListNodes(searchEngineList) {
             return searchEngineList.reduce((listHTML, searchEngineItem) => {
-                return listHTML+`<button id="search-item-${generateUuid()}" class="list-group-item">${searchEngineItem.name}</button>`;
+                return listHTML +
+                    `<button id="search-item-${generateUuid()}" class="list-group-item" search-url="${searchEngineItem.api.replace(/\%s/,encodeURIComponent('2+3'))}">${searchEngineItem.name}</button>`;
             },"");
         }
 
@@ -54,6 +65,7 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
                 return previousHtml+generateSearchEngineCategoryListNodes(eachSearchCategory);
             }, "");
         document.getElementById("accordion").innerHTML=categoryNodes;
+    document.getElementById("accordion").addEventListener("click", processSearchEngineButtonClick);
 }
 
 document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupOptions);
