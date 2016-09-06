@@ -21,8 +21,10 @@ function getDefPrefsRestorePopupOptions () {
 
 function processSearchEngineButtonClick(thisEvent) {
     if (thisEvent.target !== thisEvent.currentTarget) {
-        let searchUrl = thisEvent.target.getAttribute("search-url");
-        if (searchUrl !== null && searchUrl.length >0) {
+        let searchUrl = thisEvent.target.href;
+        let searchButtonID = thisEvent.target.id;
+        if (searchButtonID !== null && searchButtonID.startsWith("search-item-")
+            && searchUrl !== null && searchUrl.length >0) {
             chrome.tabs.create({
                 url: searchUrl
             });
@@ -34,7 +36,12 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
         function generateSearchEngineListNodes(searchEngineList) {
             return searchEngineList.reduce((listHTML, searchEngineItem) => {
                 return listHTML +
-                    `<button id="search-item-${generateUuid()}" class="list-group-item" search-url="${searchEngineItem.api.replace(/\%s/,encodeURIComponent('2+3'))}">${searchEngineItem.name}</button>`;
+                    `<a id="search-item-${generateUuid()}" class="list-group-item" href="${searchEngineItem.api.replace(/\%s/,encodeURIComponent('2+3'))}">
+                        ${searchEngineItem.name}
+                        <span class="pull-right">
+                            <button class="btn btn-xs ${searchEngineItem.pinned? "btn-primary": "btn-default"} btn-pin-this-item"><span class="glyphicon glyphicon-pushpin"></span></button>
+                        </span>
+                     </a>`;
             },"");
         }
 
