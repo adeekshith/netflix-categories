@@ -11,7 +11,7 @@ function getDefPrefsRestorePopupOptions () {
             user_config: response
         }, function (items) {
             restoreListAllSearchEnginesPopupOptions(
-                new UserConfig(JSON.parse(response))
+                new UserConfig(JSON.parse(items.user_config))
             );
         });
     }, function(Error) {
