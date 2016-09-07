@@ -34,7 +34,7 @@ body {
 }
 
 .btn-pin-this-item {
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 .list-group-item:hover .btn-pin-this-item {
