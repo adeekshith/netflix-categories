@@ -21,6 +21,22 @@ function getDefPrefsRestorePopupOptions () {
 
 
 function restorePopupOptions (thisUserConfig) {
+    /**
+     * Initial Setup
+     */
+    if (!thisUserConfig.isInitialSetupCompleted()) {
+        thisUserConfig.assignUniqueIDsToAllSearchEngines();
+        thisUserConfig.setInitialSetupCompleted(true);
+
+        chrome.storage.local.set({
+            user_config: JSON.stringify(thisUserConfig.getPreferences())
+        }, function () {
+        });
+    }
+
+    /**
+     * Search Input
+     */
     let searchInputID = "main-search-keyword-input";
     function onSearchInputChanged() {
         thisUserConfig.setLastSearchInput(document.getElementById(searchInputID).value);
@@ -35,6 +51,9 @@ function restorePopupOptions (thisUserConfig) {
     document.getElementById(searchInputID).value = thisUserConfig.getLastSearchInput();
     document.getElementById(searchInputID).addEventListener("input", onSearchInputChanged);
 
+    /**
+     * Search Engine Listing
+     */
 }
 
 document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupOptions);

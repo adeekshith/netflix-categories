@@ -42,6 +42,23 @@ UserConfig.prototype.setLastSearchInput = function (searchInput) {
     this.userPreferencesJSON_.user_data.last_search_input = searchInput;
 };
 
+UserConfig.prototype.isInitialSetupCompleted = function () {
+    let initialSetupCompleted = this.userPreferencesJSON_.user_data.completed_initial_setup;
+    return (initialSetupCompleted != null)? initialSetupCompleted: false;
+};
+
+UserConfig.prototype.setInitialSetupCompleted = function (isCompletedFlag) {
+    this.userPreferencesJSON_.user_data.completed_initial_setup = isCompletedFlag;
+};
+
+UserConfig.prototype.assignUniqueIDsToAllSearchEngines = function () {
+    return this.userPreferencesJSON_.search_engines
+        .map(eachSearchEngine => {
+            eachSearchEngine.id = generateUuid();
+            return eachSearchEngine;
+        });
+};
+
 UserConfig.prototype.getPrivacyCollectStatsStatus = function () {
     return this.userPreferencesJSON_.user_preferences.privacy.collect_stats;
 };
