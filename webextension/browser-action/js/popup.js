@@ -34,6 +34,17 @@ function restorePopupOptions (thisUserConfig) {
                 chrome.tabs.create({
                     url: searchUrl
                 });
+            } else if (thisEvent.target.classList.contains("btn-pin-this-item")) {
+                console.log("Pinned toggle received.");
+                let thisSearchID = thisEvent.target.getAttribute("search-id");
+                thisUserConfig.toggleSearchEnginePinnedById(thisSearchID);
+                //document.getElementById("search-item-pinned-toggle-"+thisSearchID).remove();
+                renderPinnedSearchEngineList("pinned-search-engines-list");
+
+                chrome.storage.local.set({
+                    user_config: JSON.stringify(thisUserConfig.getPreferences())
+                }, function () {
+                });
             }
         }
     }
@@ -76,8 +87,9 @@ function restorePopupOptions (thisUserConfig) {
      * Search Engine Listing
      */
 
-    function generateSearchEnginePinnedListNode(searchEngineItem) {
-        let pinnedSearchNodeHtml = `
+    function renderPinnedSearchEngineList(parentID) {
+        function generateSearchEnginePinnedListNode(searchEngineItem) {
+            let pinnedSearchNodeHtml = `
             <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="list-group-item clearfix" search-id="${searchEngineItem.id}" href="#" >
                 ${searchEngineItem.name}
                 <span class="pull-right">
@@ -89,21 +101,24 @@ function restorePopupOptions (thisUserConfig) {
             </a>
             `;
 
-        return pinnedSearchNodeHtml;
-    }
+            return pinnedSearchNodeHtml;
+        }
 
-    let pinnedSearchListingHTML = thisUserConfig.getSearchEnginesPinned().reduce((previousHtml, searchEngineItem) => {
-        return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
-    }, "");
+        let pinnedSearchListingHTML = thisUserConfig.getSearchEnginesPinned().reduce((previousHtml, searchEngineItem) => {
+            return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
+        }, "");
 
-    let pinnedSearchEngineListNode = document.getElementById("pinned-search-engines-list");
-    if (pinnedSearchEngineListNode !== null) {
-        pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML;
-        if (!popupEventListenerAddedFlag) { // Hack to prevent registering event multiple times
-            document.getElementById("pinned-search-engines-list").addEventListener("click", processPinnedSearchListingButtonClick);
-            popupEventListenerAddedFlag = !popupEventListenerAddedFlag;
+        let pinnedSearchEngineListNode = document.getElementById("pinned-search-engines-list");
+        if (pinnedSearchEngineListNode !== null) {
+            pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML;
+            if (!popupEventListenerAddedFlag) { // Hack to prevent registering event multiple times
+                document.getElementById("pinned-search-engines-list").addEventListener("click", processPinnedSearchListingButtonClick);
+                popupEventListenerAddedFlag = !popupEventListenerAddedFlag;
+            }
         }
     }
+
+    renderPinnedSearchEngineList("pinned-search-engines-list");
 }
 
 document.addEventListener('DOMContentLoaded', function() {
