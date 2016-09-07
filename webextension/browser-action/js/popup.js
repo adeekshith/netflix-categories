@@ -54,6 +54,25 @@ function restorePopupOptions (thisUserConfig) {
     /**
      * Search Engine Listing
      */
+
+    function generateSearchEnginePinnedListNode(searchEngineItem) {
+        let pinnedSearchNodeHtml = `
+            <a class="list-group-item clearfix" href="${searchEngineItem.api.replace(/\%s/,encodeURIComponent(thisUserConfig.getLastSearchInput()))}">
+                ${searchEngineItem.name}
+                <span class="pull-right">
+                    <button class="btn btn-xs btn-primary btn-pin-this-item" item-pinned-toggle="${searchEngineItem.id}"><span class="glyphicon glyphicon-pushpin"></span></button>
+                </span>
+            </a>
+            `;
+
+        return pinnedSearchNodeHtml;
+    }
+
+    let pinnedSearchListingHTML = thisUserConfig.getSearchEnginesPinned().reduce((previousHtml, searchEngineItem) => {
+        return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
+    }, "");
+
+    document.getElementById("pinned-search-engines-list").innerHTML = pinnedSearchListingHTML;
 }
 
 document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupOptions);
