@@ -6,28 +6,35 @@
 "use strict";
 
 function getDefPrefsRestorePopupOptions () {
-    textFileLoad(chrome.extension.getURL("data/user-preferences-default.json")).then(function(response) {
-        // The first runs when the promise resolves, with the request.reponse
-        // specified within the resolve() method.
-        restorePopupOptions(response);
-        // The second runs when the promise
-        // is rejected, and logs the Error specified with the reject() method.
+    textFileLoad(chrome.extension.getURL("../../data/data.json")).then(function(response) {
+        chrome.storage.local.get({
+            user_config: response
+        }, function (items) {
+            restorePopupOptions(
+                new UserConfig(JSON.parse(items.user_config))
+            );
+        });
     }, function(Error) {
         console.log(Error);
     });
 }
 
 
-function restorePopupOptions (userPrefDefaultJsonStr) {
-    // Read from saved preferences and restore options.
-    //$('#toggle-enable-dov').bootstrapToggle('off');
-    chrome.storage.local.get({
-        user_config: userPrefDefaultJsonStr
-    }, function (items) {
-        let thisUserPreferences = JSON.parse(items.user_config);
-        let thisUserConfig = new UserConfig(thisUserPreferences);
-        //var thisUserIsDovIconEnabled = thisUserConfig.isIconBesideDocLinksEnabled();
-    });
+function restorePopupOptions (thisUserConfig) {
+    let searchInputID = "main-search-keyword-input";
+    function onSearchInputChanged() {
+        thisUserConfig.setLastSearchInput(document.getElementById(searchInputID).value);
+
+        chrome.storage.local.set({
+            user_config: JSON.stringify(thisUserConfig.getPreferences())
+        }, function () {
+            // Callback function executed after options are saved
+        });
+    }
+
+    document.getElementById(searchInputID).value = thisUserConfig.getLastSearchInput();
+    document.getElementById(searchInputID).addEventListener("input", onSearchInputChanged);
+
 }
 
-// document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupOptions);
+document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupOptions);

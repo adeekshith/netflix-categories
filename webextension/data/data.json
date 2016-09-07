@@ -23,7 +23,7 @@
       "category": "Education",
       "name": "Wolfram|Alpha",
       "api": "https://www.wolframalpha.com/input/?i=%s",
-      "pinned": false,
+      "pinned": true,
       "last_used":0
     },
     {
@@ -47,5 +47,8 @@
     "privacy" : {
       "collect_stats" : false
     }
+  },
+  "user_data": {
+    "last_search_input": ""
   }
 }
