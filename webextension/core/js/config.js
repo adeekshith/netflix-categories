@@ -39,6 +39,27 @@ UserConfig.prototype.getSearchEnginesPinned = function () {
         .filter(eachSearchEngine => eachSearchEngine.pinned === true);
 };
 
+UserConfig.prototype.toggleSearchEnginePinnedById = function (searchEngineID) {
+    this.userPreferencesJSON_.search_engines = this.userPreferencesJSON_.search_engines
+        .map(eachSearchEngine => {
+            if (eachSearchEngine.id === searchEngineID) {
+                eachSearchEngine.pinned = !eachSearchEngine.pinned;
+            }
+            return eachSearchEngine;
+        });
+};
+
+UserConfig.prototype.getSearchEngineById = function (searchEngineID) {
+    let searchEnginesList = this.userPreferencesJSON_.search_engines;
+    for (let i = 0; i< searchEnginesList.length; i++) {
+        if (searchEnginesList[i].id == searchEngineID) {
+            return searchEnginesList[i];
+        }
+    }
+    // Return null if invalid search ID requested. This should never happen.
+    return null;
+};
+
 UserConfig.prototype.getLastSearchInput = function () {
     return this.userPreferencesJSON_.user_data.last_search_input;
 };

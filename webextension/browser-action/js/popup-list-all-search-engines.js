@@ -5,7 +5,7 @@
 
 "use strict";
 
-function getDefPrefsRestorePopupOptions () {
+function getDefPrefsRestorePopupListAllSearchEnginesOptions () {
     textFileLoad(chrome.extension.getURL("../../data/data.json")).then(function(response) {
         chrome.storage.local.get({
             user_config: response
@@ -19,27 +19,46 @@ function getDefPrefsRestorePopupOptions () {
     });
 }
 
-function processSearchEngineButtonClick(thisEvent) {
-    if (thisEvent.target !== thisEvent.currentTarget) {
-        let searchUrl = thisEvent.target.href;
-        let searchButtonID = thisEvent.target.id;
-        if (searchButtonID !== null && searchButtonID.startsWith("search-item-")
-            && searchUrl !== null && searchUrl.length >0) {
-            chrome.tabs.create({
-                url: searchUrl
-            });
+function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
+    function processSearchEngineButtonClick(thisEvent) {
+        if (thisEvent.target !== thisEvent.currentTarget) {
+            console.log("Clicked somewhere: ", thisEvent.target);
+            let searchButtonID = thisEvent.target.id;
+            if (searchButtonID !== null && searchButtonID.startsWith("search-item-open-in-tab-")){
+                let searchUrl = thisUserConfig.getSearchEngineById(
+                    thisEvent.target.getAttribute("search-id")
+                ).api.replace(/\%s/,encodeURIComponent(thisUserConfig.getLastSearchInput()));
+                chrome.tabs.create({
+                    url: searchUrl
+                });
+            } else if (thisEvent.target.classList.contains("btn-pin-this-item")) {
+                console.log("Pinned toggle received.");
+                let thisSearchID = thisEvent.target.getAttribute("search-id");
+                thisUserConfig.toggleSearchEnginePinnedById(thisSearchID);
+                let pinnedToggleBtnNode = document.getElementById("search-item-pinned-toggle-"+thisSearchID);
+
+                pinnedToggleBtnNode.classList.remove("btn-primary");
+                pinnedToggleBtnNode.classList.remove("btn-default");
+                let thisSearchItem = thisUserConfig.getSearchEngineById(thisSearchID);
+                pinnedToggleBtnNode.classList.add(thisSearchItem.pinned? "btn-primary": "btn-default");
+
+                chrome.storage.local.set({
+                    user_config: JSON.stringify(thisUserConfig.getPreferences())
+                }, function () {
+                });
+            }
         }
     }
-}
 
-function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
         function generateSearchEngineListNodes(searchEngineList) {
             return searchEngineList.reduce((listHTML, searchEngineItem) => {
                 return listHTML +
-                    `<a id="search-item-${generateUuid()}" class="list-group-item" href="${searchEngineItem.api.replace(/\%s/,encodeURIComponent(thisUserConfig.getLastSearchInput()))}">
+                    `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="list-group-item">
                         ${searchEngineItem.name}
                         <span class="pull-right">
-                            <button class="btn btn-xs ${searchEngineItem.pinned? "btn-primary": "btn-default"} btn-pin-this-item"><span class="glyphicon glyphicon-pushpin"></span></button>
+                            <button class="btn btn-xs ${searchEngineItem.pinned? "btn-primary": "btn-default"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}">
+                                &#128204;
+                            </button>
                         </span>
                      </a>`;
             },"");
@@ -74,4 +93,4 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
     document.getElementById("accordion").addEventListener("click", processSearchEngineButtonClick);
 }
 
-document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupOptions);
+document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupListAllSearchEnginesOptions);

@@ -48,8 +48,12 @@ function restorePopupOptions (thisUserConfig) {
         });
     }
 
-    document.getElementById(searchInputID).value = thisUserConfig.getLastSearchInput();
-    document.getElementById(searchInputID).addEventListener("input", onSearchInputChanged);
+    let searchInputNode = document.getElementById(searchInputID);
+
+    if (searchInputNode !== null) {
+        searchInputNode.value = thisUserConfig.getLastSearchInput();
+        searchInputNode.addEventListener("input", onSearchInputChanged);
+    }
 
     /**
      * Search Engine Listing
@@ -57,7 +61,7 @@ function restorePopupOptions (thisUserConfig) {
 
     function generateSearchEnginePinnedListNode(searchEngineItem) {
         let pinnedSearchNodeHtml = `
-            <a class="list-group-item clearfix" href="${searchEngineItem.api.replace(/\%s/,encodeURIComponent(thisUserConfig.getLastSearchInput()))}">
+            <a class="list-group-item clearfix" search-id="${searchEngineItem.id}" href="${searchEngineItem.api.replace(/\%s/,encodeURIComponent(thisUserConfig.getLastSearchInput()))}">
                 ${searchEngineItem.name}
                 <span class="pull-right">
                     <button class="btn btn-xs btn-primary btn-pin-this-item" item-pinned-toggle="${searchEngineItem.id}"><span class="glyphicon glyphicon-pushpin"></span></button>
@@ -72,7 +76,10 @@ function restorePopupOptions (thisUserConfig) {
         return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
     }, "");
 
-    document.getElementById("pinned-search-engines-list").innerHTML = pinnedSearchListingHTML;
+    let pinnedSearchEngineListNode = document.getElementById("pinned-search-engines-list");
+    if (pinnedSearchEngineListNode !== null) {
+        pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupOptions);
