@@ -34,12 +34,55 @@ UserConfig.prototype.getSearchEnginesByCategory = function (searchEngineCategory
         .filter(eachSearchEngine => eachSearchEngine.category === searchEngineCategory);
 };
 
+UserConfig.prototype.getSearchEnginesPinned = function () {
+    return this.userPreferencesJSON_.search_engines
+        .filter(eachSearchEngine => eachSearchEngine.pinned === true);
+};
+
+UserConfig.prototype.toggleSearchEnginePinnedById = function (searchEngineID) {
+    this.userPreferencesJSON_.search_engines = this.userPreferencesJSON_.search_engines
+        .map(eachSearchEngine => {
+            if (eachSearchEngine.id === searchEngineID) {
+                eachSearchEngine.pinned = !eachSearchEngine.pinned;
+            }
+            return eachSearchEngine;
+        });
+};
+
+UserConfig.prototype.getSearchEngineById = function (searchEngineID) {
+    let searchEnginesList = this.userPreferencesJSON_.search_engines;
+    for (let i = 0; i< searchEnginesList.length; i++) {
+        if (searchEnginesList[i].id == searchEngineID) {
+            return searchEnginesList[i];
+        }
+    }
+    // Return null if invalid search ID requested. This should never happen.
+    return null;
+};
+
 UserConfig.prototype.getLastSearchInput = function () {
     return this.userPreferencesJSON_.user_data.last_search_input;
 };
 
 UserConfig.prototype.setLastSearchInput = function (searchInput) {
     this.userPreferencesJSON_.user_data.last_search_input = searchInput;
+};
+
+UserConfig.prototype.isInitialSetupCompleted = function () {
+    let initialSetupCompleted = this.userPreferencesJSON_.user_data.completed_initial_setup;
+    return (initialSetupCompleted != null)? initialSetupCompleted: false;
+};
+
+UserConfig.prototype.setInitialSetupCompleted = function (isCompletedFlag) {
+    this.userPreferencesJSON_.user_data.completed_initial_setup = isCompletedFlag;
+};
+
+UserConfig.prototype.assignUniqueIDsToAllSearchEngines = function () {
+    return this.userPreferencesJSON_.search_engines
+        .map(eachSearchEngine => {
+            eachSearchEngine.id = generateUuid();
+            return eachSearchEngine;
+        });
 };
 
 UserConfig.prototype.getPrivacyCollectStatsStatus = function () {
