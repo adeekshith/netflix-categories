@@ -88,7 +88,7 @@ function restorePopupOptions (thisUserConfig) {
         function generateSearchEnginePinnedListNode(searchEngineItem) {
             let pinnedSearchNodeHtml = `
             <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="list-group-item clearfix" search-id="${searchEngineItem.id}" href="#" >
-                ${searchEngineItem.name}
+                ${searchEngineItem.category} - ${searchEngineItem.name}
                 <span class="pull-right">
                     <button class="btn btn-xs btn-primary btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}">
                         &#128204;
