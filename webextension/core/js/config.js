@@ -34,6 +34,14 @@ UserConfig.prototype.getSearchEnginesByCategory = function (searchEngineCategory
         .filter(eachSearchEngine => eachSearchEngine.category === searchEngineCategory);
 };
 
+UserConfig.prototype.getLastSearchInput = function () {
+    return this.userPreferencesJSON_.user_data.last_search_input;
+};
+
+UserConfig.prototype.setLastSearchInput = function (searchInput) {
+    this.userPreferencesJSON_.user_data.last_search_input = searchInput;
+};
+
 UserConfig.prototype.getPrivacyCollectStatsStatus = function () {
     return this.userPreferencesJSON_.user_preferences.privacy.collect_stats;
 };

@@ -47,5 +47,8 @@
     "privacy" : {
       "collect_stats" : false
     }
+  },
+  "user_data": {
+    "last_search_input": ""
   }
 }
