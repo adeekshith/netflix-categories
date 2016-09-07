@@ -24,7 +24,6 @@ function getDefPrefsRestorePopupOptions () {
 
 function restorePopupOptions (thisUserConfig) {
     function processPinnedSearchListingButtonClick(thisEvent) {
-        console.log("Clicked somewhere");
         if (thisEvent.target !== thisEvent.currentTarget) {
             let searchButtonID = thisEvent.target.id;
             if (searchButtonID !== null && searchButtonID.startsWith("featured-search-item-open-in-tab-")){
@@ -35,10 +34,8 @@ function restorePopupOptions (thisUserConfig) {
                     url: searchUrl
                 });
             } else if (thisEvent.target.classList.contains("btn-pin-this-item")) {
-                console.log("Pinned toggle received.");
                 let thisSearchID = thisEvent.target.getAttribute("search-id");
                 thisUserConfig.toggleSearchEnginePinnedById(thisSearchID);
-                //document.getElementById("search-item-pinned-toggle-"+thisSearchID).remove();
                 renderPinnedSearchEngineList("pinned-search-engines-list");
 
                 chrome.storage.local.set({

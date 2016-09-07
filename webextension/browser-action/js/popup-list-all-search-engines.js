@@ -22,7 +22,6 @@ function getDefPrefsRestorePopupListAllSearchEnginesOptions () {
 function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
     function processSearchEngineButtonClick(thisEvent) {
         if (thisEvent.target !== thisEvent.currentTarget) {
-            console.log("Clicked somewhere: ", thisEvent.target);
             let searchButtonID = thisEvent.target.id;
             if (searchButtonID !== null && searchButtonID.startsWith("search-item-open-in-tab-")){
                 let searchUrl = thisUserConfig.getSearchEngineById(
@@ -32,7 +31,6 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
                     url: searchUrl
                 });
             } else if (thisEvent.target.classList.contains("btn-pin-this-item")) {
-                console.log("Pinned toggle received.");
                 let thisSearchID = thisEvent.target.getAttribute("search-id");
                 thisUserConfig.toggleSearchEnginePinnedById(thisSearchID);
                 let pinnedToggleBtnNode = document.getElementById("search-item-pinned-toggle-"+thisSearchID);
