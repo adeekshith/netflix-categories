@@ -21,6 +21,21 @@ function getDefPrefsRestorePopupOptions () {
 
 
 function restorePopupOptions (thisUserConfig) {
+    function processPinnedSearchListingButtonClick(thisEvent) {
+        console.log("Clicked somewhere");
+        if (thisEvent.target !== thisEvent.currentTarget) {
+            let searchButtonID = thisEvent.target.id;
+            if (searchButtonID !== null && searchButtonID.startsWith("featured-search-item-open-in-tab-")){
+                let searchUrl = thisUserConfig.getSearchEngineById(
+                    thisEvent.target.getAttribute("search-id")
+                ).api.replace(/\%s/,encodeURIComponent(thisUserConfig.getLastSearchInput()));
+                chrome.tabs.create({
+                    url: searchUrl
+                });
+            }
+        }
+    }
+
     /**
      * Initial Setup
      */
@@ -61,10 +76,12 @@ function restorePopupOptions (thisUserConfig) {
 
     function generateSearchEnginePinnedListNode(searchEngineItem) {
         let pinnedSearchNodeHtml = `
-            <a class="list-group-item clearfix" search-id="${searchEngineItem.id}" href="${searchEngineItem.api.replace(/\%s/,encodeURIComponent(thisUserConfig.getLastSearchInput()))}">
+            <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="list-group-item clearfix" search-id="${searchEngineItem.id}" href="#" >
                 ${searchEngineItem.name}
                 <span class="pull-right">
-                    <button class="btn btn-xs btn-primary btn-pin-this-item" item-pinned-toggle="${searchEngineItem.id}"><span class="glyphicon glyphicon-pushpin"></span></button>
+                    <button class="btn btn-xs btn-primary btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}">
+                        &#128204;
+                    </button>
                 </span>
             </a>
             `;
@@ -79,7 +96,10 @@ function restorePopupOptions (thisUserConfig) {
     let pinnedSearchEngineListNode = document.getElementById("pinned-search-engines-list");
     if (pinnedSearchEngineListNode !== null) {
         pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML;
+        document.getElementById("pinned-search-engines-list").addEventListener("click", processPinnedSearchListingButtonClick);
     }
 }
 
-document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupOptions);
+document.addEventListener('DOMContentLoaded', function() {
+    getDefPrefsRestorePopupOptions();
+});
