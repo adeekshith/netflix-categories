@@ -68,7 +68,7 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
             <div class="panel panel-default">
                     <div class="list-group status search-list-category">
                         <a class="list-group-item list-group-item-info" data-toggle="collapse" data-parent="#accordion" href="#${collapseID}">
-                            ${category}
+                            <span class="glyphicon glyphicon-chevron-right category-list-menu-collapse-indicator pull-right" aria-hidden="true"></span>${category}
                         </a>
                     </div>
 
@@ -96,9 +96,12 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
     $('.search-list-category').on('click','> a', function(e) {
         var $this = $(this);
         let wasAlreadyActive = e.target.classList.contains("active");
+        $('.search-list-category').find('.active').find('.category-list-menu-collapse-indicator').removeClass('glyphicon-chevron-down');
+        $('.search-list-category').find('.active').find('.category-list-menu-collapse-indicator').addClass('glyphicon-chevron-right');
         $('.search-list-category').find('.active').removeClass('active');
         if (!wasAlreadyActive) {
             $this.addClass('active');
+            $this.find('.category-list-menu-collapse-indicator').addClass('glyphicon-chevron-down');
         }
     });
 }
