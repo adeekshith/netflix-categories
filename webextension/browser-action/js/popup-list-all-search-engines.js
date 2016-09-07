@@ -66,10 +66,10 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
             let collapseID = `search-category-${generateUuid()}`;
             let categoryHtml = `
             <div class="panel panel-default">
-                    <div class="list-group status">
-                        <button class="list-group-item btn btn-lg" data-toggle="collapse" data-parent="#accordion" href="#${collapseID}">
-                            ${category}
-                        </button>
+                    <div class="list-group status search-list-category">
+                        <a class="list-group-item list-group-item-info" data-toggle="collapse" data-parent="#accordion" href="#${collapseID}">
+                            <span class="glyphicon glyphicon-chevron-right category-list-menu-collapse-indicator pull-right" aria-hidden="true"></span>${category}
+                        </a>
                     </div>
 
                 <div id="${collapseID}" class="panel-collapse collapse">
@@ -89,6 +89,21 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
             }, "");
         document.getElementById("accordion").innerHTML=categoryNodes;
     document.getElementById("accordion").addEventListener("click", processSearchEngineButtonClick);
+
+    /**
+     * Highlight Search Engine Category Item On Click
+     */
+    $('.search-list-category').on('click','> a', function(e) {
+        var $this = $(this);
+        let wasAlreadyActive = e.target.classList.contains("active");
+        $('.search-list-category').find('.active').find('.category-list-menu-collapse-indicator').removeClass('glyphicon-chevron-down');
+        $('.search-list-category').find('.active').find('.category-list-menu-collapse-indicator').addClass('glyphicon-chevron-right');
+        $('.search-list-category').find('.active').removeClass('active');
+        if (!wasAlreadyActive) {
+            $this.addClass('active');
+            $this.find('.category-list-menu-collapse-indicator').addClass('glyphicon-chevron-down');
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', getDefPrefsRestorePopupListAllSearchEnginesOptions);
