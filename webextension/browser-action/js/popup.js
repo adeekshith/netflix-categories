@@ -5,6 +5,8 @@
 
 "use strict";
 
+let popupEventListenerAddedFlag = false;
+
 function getDefPrefsRestorePopupOptions () {
     textFileLoad(chrome.extension.getURL("../../data/data.json")).then(function(response) {
         chrome.storage.local.get({
@@ -83,6 +85,7 @@ function restorePopupOptions (thisUserConfig) {
                         &#128204;
                     </button>
                 </span>
+
             </a>
             `;
 
@@ -96,7 +99,10 @@ function restorePopupOptions (thisUserConfig) {
     let pinnedSearchEngineListNode = document.getElementById("pinned-search-engines-list");
     if (pinnedSearchEngineListNode !== null) {
         pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML;
-        document.getElementById("pinned-search-engines-list").addEventListener("click", processPinnedSearchListingButtonClick);
+        if (!popupEventListenerAddedFlag) { // Hack to prevent registering event multiple times
+            document.getElementById("pinned-search-engines-list").addEventListener("click", processPinnedSearchListingButtonClick);
+            popupEventListenerAddedFlag = !popupEventListenerAddedFlag;
+        }
     }
 }
 
