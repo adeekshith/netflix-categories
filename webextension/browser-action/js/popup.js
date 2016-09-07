@@ -91,7 +91,7 @@ function restorePopupOptions (thisUserConfig) {
                 ${searchEngineItem.category} - ${searchEngineItem.name}
                 <span class="pull-right">
                     <button class="btn btn-xs btn-primary btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}">
-                        &#128204;
+                        <i class="fa fa-thumb-tack"></i>
                     </button>
                 </span>
 
