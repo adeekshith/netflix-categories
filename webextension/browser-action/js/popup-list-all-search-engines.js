@@ -53,7 +53,7 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
         function generateSearchEngineListNodes(searchEngineList) {
             return searchEngineList.reduce((listHTML, searchEngineItem) => {
                 return listHTML +
-                    `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="list-group-item">
+                    `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="list-group-item" href="#">
                         ${searchEngineItem.name}
                         <span class="pull-right">
                             <button class="btn btn-xs ${searchEngineItem.pinned? "btn-primary": "btn-default"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}">
