@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "applications": {
     "gecko": {
-      "id": "custom-search@deekshith.in"
+      "id": "netflix-categories@deekshith.in"
     }
   },
   "minimum_chrome_version": "45.0",
