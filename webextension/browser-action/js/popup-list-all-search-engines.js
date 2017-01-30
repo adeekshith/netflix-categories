@@ -62,7 +62,7 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
             },"");
         }
 
-        document.getElementById("accordion").innerHTML= generateSearchEngineListNodes(thisUserConfig.getSearchEnginesByCategory("NetflixGenre"));
+        document.getElementById("accordion").innerHTML= generateSearchEngineListNodes(thisUserConfig.getSearchEnginesByCategory("NetflixCategories"));
     document.getElementById("accordion").addEventListener("click", processSearchEngineButtonClick);
 
 }
