@@ -64,7 +64,9 @@ function restorePopupOptions (thisUserConfig) {
      */
     let searchInputID = "main-search-keyword-input";
     function onSearchInputChanged() {
-        thisUserConfig.setLastSearchInput(document.getElementById(searchInputID).value);
+        let currentSearchInput = document.getElementById(searchInputID).value;
+
+        thisUserConfig.setLastSearchInput(currentSearchInput);
 
         chrome.storage.local.set({
             user_config: JSON.stringify(thisUserConfig.getPreferences())
@@ -102,11 +104,11 @@ function restorePopupOptions (thisUserConfig) {
             return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
         }, "");
 
-        let pinnedSearchEngineListNode = document.getElementById("pinned-search-engines-list");
+        let pinnedSearchEngineListNode = document.getElementById(parentID);
         if (pinnedSearchEngineListNode !== null) {
             pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML;
             if (!popupEventListenerAddedFlag) { // Hack to prevent registering event multiple times
-                document.getElementById("pinned-search-engines-list").addEventListener("click", processPinnedSearchListingButtonClick);
+                document.getElementById(parentID).addEventListener("click", processPinnedSearchListingButtonClick);
                 popupEventListenerAddedFlag = !popupEventListenerAddedFlag;
             }
         }
