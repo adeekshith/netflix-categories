@@ -51,7 +51,7 @@ UserConfig.prototype.toggleSearchEnginePinnedById = function (searchEngineID) {
 
 UserConfig.prototype.getSearchEnginesBySearchMatch = function (searchInput) {
     return this.userPreferencesJSON_.search_engines
-        .filter(eachSearchEngine => eachSearchEngine.name.match(searchInput) !== null);
+        .filter(eachSearchEngine => eachSearchEngine.name.match(new RegExp(searchInput, 'i')) !== null);
 };
 
 UserConfig.prototype.getSearchEngineById = function (searchEngineID) {
