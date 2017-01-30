@@ -90,11 +90,9 @@ function restorePopupOptions (thisUserConfig) {
             <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="list-group-item clearfix" search-id="${searchEngineItem.id}" href="#" >
                 ${searchEngineItem.category} - ${searchEngineItem.name}
                 <span class="pull-right">
-                    <button class="btn btn-xs btn-primary btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}">
-                        <i class="fa fa-thumb-tack"></i>
-                    </button>
+                    <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-star": "fa-star-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
+                    title=${searchEngineItem.pinned? "Remove_from_favorites": "Add_to_Favourites"}></i>
                 </span>
-
             </a>
             `;
 
