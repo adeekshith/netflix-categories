@@ -364,7 +364,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Documentaries",
+      "name": "Crime Documentaries",
       "api": "http://www.netflix.com/browse/genre/9875",
       "pinned": false,
       "last_used":0
@@ -581,7 +581,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Documentaries",
+      "name": "Foreign Documentaries",
       "api": "http://www.netflix.com/browse/genre/5161",
       "pinned": false,
       "last_used":0
@@ -924,7 +924,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Documentaries",
+      "name": "Music & Concert Documentaries",
       "api": "http://www.netflix.com/browse/genre/90361",
       "pinned": false,
       "last_used":0
@@ -1015,7 +1015,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Documentaries",
+      "name": "Religious Documentaries",
       "api": "http://www.netflix.com/browse/genre/10005",
       "pinned": false,
       "last_used":0
@@ -1183,7 +1183,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "and Serial Killer Movies",
+      "name": "Slasher and Serial Killer Movies",
       "api": "http://www.netflix.com/browse/genre/8646",
       "pinned": false,
       "last_used":0
@@ -1246,7 +1246,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Documentaries",
+      "name": "Sports Documentaries",
       "api": "http://www.netflix.com/browse/genre/180",
       "pinned": false,
       "last_used":0
@@ -1393,7 +1393,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Documentaries",
+      "name": "TV Documentaries",
       "api": "http://www.netflix.com/browse/genre/10105",
       "pinned": false,
       "last_used":0
