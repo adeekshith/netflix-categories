@@ -33,8 +33,11 @@ function restorePopupOptions (thisUserConfig) {
                 let searchUrl = thisUserConfig.getSearchEngineById(
                     thisEvent.target.getAttribute("search-id")
                 ).api.replace(/\%s/,encodeURIComponent(thisUserConfig.getLastSearchInput()));
-                chrome.tabs.create({
-                    url: searchUrl
+
+                chrome.tabs.query( { active: true, currentWindow: true }, (tabs) => {
+                    chrome.tabs.update(tabs.id, {
+                        url: searchUrl
+                    });
                 });
             } else if (thisEvent.target.classList.contains("btn-pin-this-item")) {
                 let thisSearchID = thisEvent.target.getAttribute("search-id");
