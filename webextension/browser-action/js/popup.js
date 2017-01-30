@@ -5,7 +5,7 @@
 
 "use strict";
 
-const minSearchStringLength = 3;
+const minSearchStringLength = 1;
 let popupEventListenerAddedFlag = false;
 
 let searchInputID = "main-search-keyword-input";
