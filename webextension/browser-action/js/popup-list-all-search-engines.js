@@ -35,10 +35,11 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
                 thisUserConfig.toggleSearchEnginePinnedById(thisSearchID);
                 let pinnedToggleBtnNode = document.getElementById("search-item-pinned-toggle-"+thisSearchID);
 
-                pinnedToggleBtnNode.classList.remove("btn-primary");
-                pinnedToggleBtnNode.classList.remove("btn-default");
+                pinnedToggleBtnNode.classList.remove("fa-star");
+                pinnedToggleBtnNode.classList.remove("fa-star-o");
                 let thisSearchItem = thisUserConfig.getSearchEngineById(thisSearchID);
-                pinnedToggleBtnNode.classList.add(thisSearchItem.pinned? "btn-primary": "btn-default");
+                pinnedToggleBtnNode.classList.add(thisSearchItem.pinned? "fa-star": "fa-star-o");
+                pinnedToggleBtnNode.title=thisSearchItem.pinned? "Remove_from_favorites": "Add_to_favorites";
 
                 chrome.storage.local.set({
                     user_config: JSON.stringify(thisUserConfig.getPreferences())
@@ -54,9 +55,8 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
                     `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="list-group-item" href="#">
                         ${searchEngineItem.name}
                         <span class="pull-right">
-                            <button class="btn btn-xs ${searchEngineItem.pinned? "btn-primary": "btn-default"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}">
-                                <i class="fa fa-thumb-tack"></i>
-                            </button>
+                            <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-star": "fa-star-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
+                            title=${searchEngineItem.pinned? "Remove_from_favorites": "Add_to_Favourites"}></i>
                         </span>
                      </a>`;
             },"");
