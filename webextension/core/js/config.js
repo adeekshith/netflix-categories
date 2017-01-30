@@ -49,6 +49,11 @@ UserConfig.prototype.toggleSearchEnginePinnedById = function (searchEngineID) {
         });
 };
 
+UserConfig.prototype.getSearchEnginesBySearchMatch = function (searchInput) {
+    return this.userPreferencesJSON_.search_engines
+        .filter(eachSearchEngine => eachSearchEngine.name.match(searchInput) !== null);
+};
+
 UserConfig.prototype.getSearchEngineById = function (searchEngineID) {
     let searchEnginesList = this.userPreferencesJSON_.search_engines;
     for (let i = 0; i< searchEnginesList.length; i++) {
