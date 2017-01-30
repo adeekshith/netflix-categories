@@ -5,7 +5,10 @@
 
 "use strict";
 
+const minSearchStringLength = 3;
 let popupEventListenerAddedFlag = false;
+
+let searchInputID = "main-search-keyword-input";
 
 function getDefPrefsRestorePopupOptions () {
     textFileLoad(chrome.extension.getURL("../../data/data.json")).then(function(response) {
@@ -36,7 +39,11 @@ function restorePopupOptions (thisUserConfig) {
             } else if (thisEvent.target.classList.contains("btn-pin-this-item")) {
                 let thisSearchID = thisEvent.target.getAttribute("search-id");
                 thisUserConfig.toggleSearchEnginePinnedById(thisSearchID);
-                renderItemListByType("pinned-search-engines-list", "pinned");
+                if (document.getElementById(searchInputID).value.length >= minSearchStringLength) {
+                    renderItemListByType("pinned-search-engines-list", "searchInput");
+                } else {
+                    renderItemListByType("pinned-search-engines-list", "pinned");
+                }
 
                 chrome.storage.local.set({
                     user_config: JSON.stringify(thisUserConfig.getPreferences())
@@ -62,9 +69,13 @@ function restorePopupOptions (thisUserConfig) {
     /**
      * Search Input
      */
-    let searchInputID = "main-search-keyword-input";
     function onSearchInputChanged() {
         let currentSearchInput = document.getElementById(searchInputID).value;
+        if (currentSearchInput.length >= minSearchStringLength) {
+            renderItemListByType("pinned-search-engines-list", "searchInput");
+        } else {
+            renderItemListByType("pinned-search-engines-list", "pinned");
+        }
 
         thisUserConfig.setLastSearchInput(currentSearchInput);
 
@@ -100,7 +111,10 @@ function restorePopupOptions (thisUserConfig) {
             return pinnedSearchNodeHtml;
         }
 
-        let pinnedSearchListingHTML = (filterType == "searchInput"? thisUserConfig.getSearchEnginesBySearchMatch(): thisUserConfig.getSearchEnginesPinned())
+        let pinnedSearchListingHTML =
+            (filterType == "searchInput"?
+                thisUserConfig.getSearchEnginesBySearchMatch(document.getElementById(searchInputID).value):
+                thisUserConfig.getSearchEnginesPinned())
             .reduce((previousHtml, searchEngineItem) => {
                 return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
             }, "");
