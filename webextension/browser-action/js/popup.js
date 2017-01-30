@@ -36,7 +36,7 @@ function restorePopupOptions (thisUserConfig) {
             } else if (thisEvent.target.classList.contains("btn-pin-this-item")) {
                 let thisSearchID = thisEvent.target.getAttribute("search-id");
                 thisUserConfig.toggleSearchEnginePinnedById(thisSearchID);
-                renderPinnedSearchEngineList("pinned-search-engines-list");
+                renderItemListByType("pinned-search-engines-list", "pinned");
 
                 chrome.storage.local.set({
                     user_config: JSON.stringify(thisUserConfig.getPreferences())
@@ -86,7 +86,7 @@ function restorePopupOptions (thisUserConfig) {
      * Search Engine Listing
      */
 
-    function renderPinnedSearchEngineList(parentID) {
+    function renderItemListByType(parentID, filterType) {
         function generateSearchEnginePinnedListNode(searchEngineItem) {
             let pinnedSearchNodeHtml = `
             <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="list-group-item clearfix" search-id="${searchEngineItem.id}" href="#" > ${searchEngineItem.name}
@@ -100,9 +100,10 @@ function restorePopupOptions (thisUserConfig) {
             return pinnedSearchNodeHtml;
         }
 
-        let pinnedSearchListingHTML = thisUserConfig.getSearchEnginesPinned().reduce((previousHtml, searchEngineItem) => {
-            return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
-        }, "");
+        let pinnedSearchListingHTML = (filterType == "searchInput"? thisUserConfig.getSearchEnginesBySearchMatch(): thisUserConfig.getSearchEnginesPinned())
+            .reduce((previousHtml, searchEngineItem) => {
+                return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
+            }, "");
 
         let pinnedSearchEngineListNode = document.getElementById(parentID);
         if (pinnedSearchEngineListNode !== null) {
@@ -114,7 +115,7 @@ function restorePopupOptions (thisUserConfig) {
         }
     }
 
-    renderPinnedSearchEngineList("pinned-search-engines-list");
+    renderItemListByType("pinned-search-engines-list", "pinned");
 }
 
 document.addEventListener('DOMContentLoaded', function() {
