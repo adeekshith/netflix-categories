@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message":"Custom Search",
+    "message":"Netflix Categories",
     "description":"Extension name"
   },
   "extShortName": {
@@ -8,7 +8,7 @@
     "description":"Extension short name"
   },
   "extDescription": {
-    "message":"Custom search browser plugin for organizations.",
+    "message":"Explore Hidden Categories On Netflix",
     "description":"Extension description"
   }
 }
