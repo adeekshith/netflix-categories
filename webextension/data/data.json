@@ -1474,6 +1474,13 @@
       "api": "http://www.netflix.com/browse/genre/75405",
       "pinned": false,
       "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Docs & Reality",
+      "api": "http://www.netflix.com/browse/genre/1390291",
+      "pinned": false,
+      "last_used":0
     }
   ],
   "user_preferences" : {
