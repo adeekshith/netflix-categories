@@ -21,7 +21,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Fantasy",
+      "name": "Action Sci-Fi & Fantasy",
       "api": "http://www.netflix.com/browse/genre/1568",
       "pinned": false,
       "last_used":0
@@ -35,7 +35,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Animation",
+      "name": "Adult Animation",
       "api": "http://www.netflix.com/browse/genre/11881",
       "pinned": false,
       "last_used":0
@@ -63,15 +63,8 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Tales",
+      "name": "Animal Tales",
       "api": "http://www.netflix.com/browse/genre/5507",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
-      "name": "Anime",
-      "api": "http://www.netflix.com/browse/genre/7424",
       "pinned": false,
       "last_used":0
     },
@@ -84,6 +77,13 @@
     },
     {
       "category": "NetflixCategories",
+      "name": "Anime",
+      "api": "http://www.netflix.com/browse/genre/7424",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
       "name": "Anime Comedies",
       "api": "http://www.netflix.com/browse/genre/9302",
       "pinned": false,
@@ -91,21 +91,21 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Anime Dramas",
       "api": "http://www.netflix.com/browse/genre/452",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Fantasy",
+      "name": "Anime Fantasy",
       "api": "http://www.netflix.com/browse/genre/11146",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Features",
+      "name": "Anime Features",
       "api": "http://www.netflix.com/browse/genre/3063",
       "pinned": false,
       "last_used":0
@@ -154,13 +154,6 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "B-Horror Movies",
-      "api": "http://www.netflix.com/browse/genre/8195",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
       "name": "Baseball Movies",
       "api": "http://www.netflix.com/browse/genre/12339",
       "pinned": false,
@@ -182,6 +175,13 @@
     },
     {
       "category": "NetflixCategories",
+      "name": "B-Horror Movies",
+      "api": "http://www.netflix.com/browse/genre/8195",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
       "name": "Biographical Documentaries",
       "api": "http://www.netflix.com/browse/genre/3652",
       "pinned": false,
@@ -189,7 +189,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Biographical Dramas",
       "api": "http://www.netflix.com/browse/genre/3179",
       "pinned": false,
       "last_used":0
@@ -224,7 +224,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Family Movies",
+      "name": "Children & Family Movies",
       "api": "http://www.netflix.com/browse/genre/783",
       "pinned": false,
       "last_used":0
@@ -252,7 +252,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Classic Dramas",
       "api": "http://www.netflix.com/browse/genre/29809",
       "pinned": false,
       "last_used":0
@@ -287,7 +287,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Fantasy",
+      "name": "Classic Sci-Fi & Fantasy",
       "api": "http://www.netflix.com/browse/genre/47147",
       "pinned": false,
       "last_used":0
@@ -308,7 +308,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "War Movies",
+      "name": "Classic War Movies",
       "api": "http://www.netflix.com/browse/genre/48744",
       "pinned": false,
       "last_used":0
@@ -329,35 +329,35 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "and Superhero Movies",
+      "name": "Comic Book and Superhero Movies",
       "api": "http://www.netflix.com/browse/genre/10118",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Folk",
+      "name": "Country & Western/Folk",
       "api": "http://www.netflix.com/browse/genre/1105",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Courtroom Dramas",
       "api": "http://www.netflix.com/browse/genre/2748",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Features",
+      "name": "Creature Features",
       "api": "http://www.netflix.com/browse/genre/6895",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Adventure",
+      "name": "Crime Action & Adventure",
       "api": "http://www.netflix.com/browse/genre/9584",
       "pinned": false,
       "last_used":0
@@ -371,7 +371,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Crime Dramas",
       "api": "http://www.netflix.com/browse/genre/6889",
       "pinned": false,
       "last_used":0
@@ -413,7 +413,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Fantasy",
+      "name": "Cult Sci-Fi & Fantasy",
       "api": "http://www.netflix.com/browse/genre/4734",
       "pinned": false,
       "last_used":0
@@ -434,7 +434,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Sea Horror Movies",
+      "name": "Deep Sea Horror Movies",
       "api": "http://www.netflix.com/browse/genre/45028",
       "pinned": false,
       "last_used":0
@@ -448,7 +448,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Musicals",
+      "name": "Disney Musicals",
       "api": "http://www.netflix.com/browse/genre/59433",
       "pinned": false,
       "last_used":0
@@ -553,7 +553,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Travel TV",
+      "name": "Food & Travel TV",
       "api": "http://www.netflix.com/browse/genre/72436",
       "pinned": false,
       "last_used":0
@@ -567,7 +567,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Adventure",
+      "name": "Foreign Action & Adventure",
       "api": "http://www.netflix.com/browse/genre/11828",
       "pinned": false,
       "last_used":0
@@ -588,14 +588,14 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Foreign Dramas",
       "api": "http://www.netflix.com/browse/genre/2150",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Lesbian Movies",
+      "name": "Foreign Gay & Lesbian Movies",
       "api": "http://www.netflix.com/browse/genre/8243",
       "pinned": false,
       "last_used":0
@@ -616,7 +616,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Fantasy",
+      "name": "Foreign Sci-Fi & Fantasy",
       "api": "http://www.netflix.com/browse/genre/6485",
       "pinned": false,
       "last_used":0
@@ -644,7 +644,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Gay & Lesbian Dramas",
       "api": "http://www.netflix.com/browse/genre/500",
       "pinned": false,
       "last_used":0
@@ -686,7 +686,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Adventure",
+      "name": "Independent Action & Adventure",
       "api": "http://www.netflix.com/browse/genre/11804",
       "pinned": false,
       "last_used":0
@@ -700,7 +700,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Independent Dramas",
       "api": "http://www.netflix.com/browse/genre/384",
       "pinned": false,
       "last_used":0
@@ -749,14 +749,21 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Easy Listening",
+      "name": "Jazz & Easy Listening",
       "api": "http://www.netflix.com/browse/genre/10271",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Faith & Spirituality",
+      "name": "Kids' TV",
+      "api": "http://www.netflix.com/browse/genre/27346",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Kids Faith & Spirituality",
       "api": "http://www.netflix.com/browse/genre/751423",
       "pinned": false,
       "last_used":0
@@ -765,13 +772,6 @@
       "category": "NetflixCategories",
       "name": "Kids Music",
       "api": "http://www.netflix.com/browse/genre/52843",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
-      "name": "Kids’ TV",
-      "api": "http://www.netflix.com/browse/genre/27346",
       "pinned": false,
       "last_used":0
     },
@@ -812,6 +812,13 @@
     },
     {
       "category": "NetflixCategories",
+      "name": "Martial Arts, Boxing & Wresling",
+      "api": "http://www.netflix.com/browse/genre/6695",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
       "name": "Martial Arts Movies",
       "api": "http://www.netflix.com/browse/genre/8985",
       "pinned": false,
@@ -819,14 +826,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Martial Arts, Boxing & Wrestling",
-      "api": "http://www.netflix.com/browse/genre/6695",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
-      "name": "Eastern Movies",
+      "name": "Middle Eastern Movies",
       "api": "http://www.netflix.com/browse/genre/5875",
       "pinned": false,
       "last_used":0
@@ -847,7 +847,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Military Dramas",
       "api": "http://www.netflix.com/browse/genre/11",
       "pinned": false,
       "last_used":0
@@ -882,57 +882,43 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "books",
+      "name": "Movies based on children's books",
       "api": "http://www.netflix.com/browse/genre/10056",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "ages 0 to 2",
+      "name": "Movies for ages 0 to 2",
       "api": "http://www.netflix.com/browse/genre/6796",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "ages 2 to 4",
-      "api": "http://www.netflix.com/browse/genre/6218",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
-      "name": "ages 5 to 7",
-      "api": "http://www.netflix.com/browse/genre/5455",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
-      "name": "ages 8 to 10",
-      "api": "http://www.netflix.com/browse/genre/561",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
-      "name": "ages 11 to 12",
+      "name": "Movies for ages 11 to 12",
       "api": "http://www.netflix.com/browse/genre/6962",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Music & Concert Documentaries",
-      "api": "http://www.netflix.com/browse/genre/90361",
+      "name": "Movies for ages 2 to 4",
+      "api": "http://www.netflix.com/browse/genre/6218",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Music",
-      "api": "http://www.netflix.com/browse/genre/1701",
+      "name": "Movies for ages 5 to 7",
+      "api": "http://www.netflix.com/browse/genre/5455",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Movies for ages 8 to 10",
+      "api": "http://www.netflix.com/browse/genre/561",
       "pinned": false,
       "last_used":0
     },
@@ -945,6 +931,20 @@
     },
     {
       "category": "NetflixCategories",
+      "name": "Music",
+      "api": "http://www.netflix.com/browse/genre/1701",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Music & Concert Documentaries",
+      "api": "http://www.netflix.com/browse/genre/90361",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
       "name": "Mysteries",
       "api": "http://www.netflix.com/browse/genre/9994",
       "pinned": false,
@@ -952,7 +952,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Zealand Movies",
+      "name": "New Zealand Movies",
       "api": "http://www.netflix.com/browse/genre/63782",
       "pinned": false,
       "last_used":0
@@ -980,7 +980,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Political Dramas",
       "api": "http://www.netflix.com/browse/genre/6616",
       "pinned": false,
       "last_used":0
@@ -1001,7 +1001,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Romance",
+      "name": "Quirky Romance",
       "api": "http://www.netflix.com/browse/genre/36103",
       "pinned": false,
       "last_used":0
@@ -1022,7 +1022,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Concerts",
+      "name": "Rock & Pop Concerts",
       "api": "http://www.netflix.com/browse/genre/3278",
       "pinned": false,
       "last_used":0
@@ -1036,7 +1036,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Romantic Dramas",
       "api": "http://www.netflix.com/browse/genre/1255",
       "pinned": false,
       "last_used":0
@@ -1099,8 +1099,15 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Fantasy",
-      "api": "http://www.netflix.com/browse/genre/1492",
+      "name": "Science & Nature Documentaries",
+      "api": "http://www.netflix.com/browse/genre/2595",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Science & Nature TV",
+      "api": "http://www.netflix.com/browse/genre/52780",
       "pinned": false,
       "last_used":0
     },
@@ -1113,14 +1120,21 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Sci-Fi Dramas",
       "api": "http://www.netflix.com/browse/genre/3916",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Movies",
+      "name": "Sci-Fi & Fantasy",
+      "api": "http://www.netflix.com/browse/genre/1492",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Sci-Fi Horror Movies",
       "api": "http://www.netflix.com/browse/genre/1694",
       "pinned": false,
       "last_used":0
@@ -1134,20 +1148,6 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Nature Documentaries",
-      "api": "http://www.netflix.com/browse/genre/2595",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
-      "name": "Nature TV",
-      "api": "http://www.netflix.com/browse/genre/52780",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
       "name": "Screwball Comedies",
       "api": "http://www.netflix.com/browse/genre/9702",
       "pinned": false,
@@ -1155,7 +1155,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Showbiz Dramas",
       "api": "http://www.netflix.com/browse/genre/5012",
       "pinned": false,
       "last_used":0
@@ -1204,14 +1204,14 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Social Issue Dramas",
       "api": "http://www.netflix.com/browse/genre/3947",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Asian Movies",
+      "name": "Southeast Asian Movies",
       "api": "http://www.netflix.com/browse/genre/9196",
       "pinned": false,
       "last_used":0
@@ -1232,13 +1232,6 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Sports & Fitness",
-      "api": "http://www.netflix.com/browse/genre/9327",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
       "name": "Sports Comedies",
       "api": "http://www.netflix.com/browse/genre/5286",
       "pinned": false,
@@ -1253,8 +1246,15 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Sports Dramas",
       "api": "http://www.netflix.com/browse/genre/7243",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Sports & Fitness",
+      "api": "http://www.netflix.com/browse/genre/9327",
       "pinned": false,
       "last_used":0
     },
@@ -1267,7 +1267,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Adventure",
+      "name": "Spy Action & Adventure",
       "api": "http://www.netflix.com/browse/genre/10702",
       "pinned": false,
       "last_used":0
@@ -1337,14 +1337,14 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "Teen Dramas",
       "api": "http://www.netflix.com/browse/genre/9299",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Screams",
+      "name": "Teen Screams",
       "api": "http://www.netflix.com/browse/genre/52147",
       "pinned": false,
       "last_used":0
@@ -1372,14 +1372,14 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Adventure",
+      "name": "TV Action & Adventure",
       "api": "http://www.netflix.com/browse/genre/10673",
       "pinned": false,
       "last_used":0
     },
     {
       "category": "NetflixCategories",
-      "name": "Cartoons",
+      "name": "TV Cartoons",
       "api": "http://www.netflix.com/browse/genre/11177",
       "pinned": false,
       "last_used":0
@@ -1400,7 +1400,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dramas",
+      "name": "TV Dramas",
       "api": "http://www.netflix.com/browse/genre/11714",
       "pinned": false,
       "last_used":0
@@ -1421,7 +1421,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Fantasy",
+      "name": "TV Sci-Fi & Fantasy",
       "api": "http://www.netflix.com/browse/genre/1372",
       "pinned": false,
       "last_used":0
@@ -1435,7 +1435,7 @@
     },
     {
       "category": "NetflixCategories",
-      "name": "Dance Concerts",
+      "name": "Urban & Dance Concerts",
       "api": "http://www.netflix.com/browse/genre/9472",
       "pinned": false,
       "last_used":0
@@ -1472,13 +1472,6 @@
       "category": "NetflixCategories",
       "name": "Zombie Horror Movies",
       "api": "http://www.netflix.com/browse/genre/75405",
-      "pinned": false,
-      "last_used":0
-    },
-    {
-      "category": "NetflixCategories",
-      "name": "Docs & Reality",
-      "api": "http://www.netflix.com/browse/genre/1390291",
       "pinned": false,
       "last_used":0
     }
