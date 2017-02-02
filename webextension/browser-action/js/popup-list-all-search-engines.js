@@ -37,10 +37,10 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
                 thisUserConfig.toggleSearchEnginePinnedById(thisSearchID);
                 let pinnedToggleBtnNode = document.getElementById("search-item-pinned-toggle-"+thisSearchID);
 
-                pinnedToggleBtnNode.classList.remove("fa-star");
-                pinnedToggleBtnNode.classList.remove("fa-star-o");
+                pinnedToggleBtnNode.classList.remove("fa-heart");
+                pinnedToggleBtnNode.classList.remove("fa-heart-o");
                 let thisSearchItem = thisUserConfig.getSearchEngineById(thisSearchID);
-                pinnedToggleBtnNode.classList.add(thisSearchItem.pinned? "fa-star": "fa-star-o");
+                pinnedToggleBtnNode.classList.add(thisSearchItem.pinned? "fa-heart": "fa-heart-o");
                 pinnedToggleBtnNode.title=thisSearchItem.pinned? "Remove_from_favorites": "Add_to_favorites";
 
                 chrome.storage.local.set({
@@ -57,7 +57,7 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
                     `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="list-group-item">
                         ${searchEngineItem.name}
                         <span class="pull-right">
-                            <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-star": "fa-star-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
+                            <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-heart": "fa-heart-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
                             title=${searchEngineItem.pinned? "Remove_from_favorites": "Add_to_Favourites"}></i>
                         </span>
                      </a>`;
