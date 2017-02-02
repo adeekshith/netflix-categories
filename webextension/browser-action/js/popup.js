@@ -10,6 +10,12 @@ let popupEventListenerAddedFlag = false;
 
 let searchInputID = "main-search-keyword-input";
 
+const allCategoriesListItem = `
+    <a class="list-group-item" href="popup-list-all-search-engines.html">
+        <span class="glyphicon pull-left" aria-hidden="true" style="color: #CCCCCC"></span>
+        &nbsp;&nbsp;All Categories <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span>
+    </a>`;
+
 function getDefPrefsRestorePopupOptions () {
     textFileLoad(chrome.extension.getURL("../../data/data.json")).then(function(response) {
         chrome.storage.local.get({
@@ -115,7 +121,7 @@ function restorePopupOptions (thisUserConfig) {
 
         let pinnedSearchEngineListNode = document.getElementById(parentID);
         if (pinnedSearchEngineListNode !== null) {
-            pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML;
+            pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML+(filterType == "searchInput"?"":allCategoriesListItem);
             if (!popupEventListenerAddedFlag) { // Hack to prevent registering event multiple times
                 document.getElementById(parentID).addEventListener("click", processPinnedSearchListingButtonClick);
                 popupEventListenerAddedFlag = !popupEventListenerAddedFlag;
