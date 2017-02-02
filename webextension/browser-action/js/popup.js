@@ -100,7 +100,7 @@ function restorePopupOptions (thisUserConfig) {
     function renderItemListByType(parentID, filterType) {
         function generateSearchEnginePinnedListNode(searchEngineItem) {
             let pinnedSearchNodeHtml = `
-            <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="list-group-item clearfix" search-id="${searchEngineItem.id}" href="#" > ${searchEngineItem.name}
+            <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="list-group-item clearfix" search-id="${searchEngineItem.id}" > ${searchEngineItem.name}
                 <span class="pull-right">
                     <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-star": "fa-star-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
                     title=${searchEngineItem.pinned? "Remove_from_favorites": "Add_to_Favourites"}></i>
