@@ -7,3 +7,6 @@
 [submodule "webextension/libs/FortAwesome/Font-Awesome"]
 	path = webextension/libs/FortAwesome/Font-Awesome
 	url = git@github.com:FortAwesome/Font-Awesome.git
+[submodule "webextension/libs/hint.css"]
+	path = webextension/libs/hint.css
+	url = git@github.com:chinchang/hint.css.git
