@@ -79,20 +79,11 @@ function restorePopupOptions (thisUserConfig) {
         } else {
             renderItemListByType("pinned-search-engines-list", "pinned");
         }
-
-        thisUserConfig.setLastSearchInput(currentSearchInput);
-
-        chrome.storage.local.set({
-            user_config: JSON.stringify(thisUserConfig.getPreferences())
-        }, function () {
-            // Callback function executed after options are saved
-        });
     }
 
     let searchInputNode = document.getElementById(searchInputID);
 
     if (searchInputNode !== null) {
-        searchInputNode.value = thisUserConfig.getLastSearchInput();
         searchInputNode.addEventListener("input", onSearchInputChanged);
     }
 
