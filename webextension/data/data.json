@@ -9,7 +9,7 @@
       "category": "NetflixCategories",
       "name": "Action & Adventure",
       "api": "http://www.netflix.com/browse/genre/1365",
-      "pinned": false,
+      "pinned": true,
       "last_used":0
     },
     {
@@ -184,7 +184,7 @@
       "category": "NetflixCategories",
       "name": "Biographical Documentaries",
       "api": "http://www.netflix.com/browse/genre/3652",
-      "pinned": false,
+      "pinned": true,
       "last_used":0
     },
     {
@@ -821,7 +821,7 @@
       "category": "NetflixCategories",
       "name": "Martial Arts Movies",
       "api": "http://www.netflix.com/browse/genre/8985",
-      "pinned": false,
+      "pinned": true,
       "last_used":0
     },
     {
@@ -1290,7 +1290,7 @@
       "category": "NetflixCategories",
       "name": "Stand-up Comedy",
       "api": "http://www.netflix.com/browse/genre/11559",
-      "pinned": false,
+      "pinned": true,
       "last_used":0
     },
     {
