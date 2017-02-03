@@ -38,8 +38,6 @@
   ],
   "permissions": [
     "storage",
-    "*://*/*",
-    "history",
     "contextMenus"
   ]
 }
