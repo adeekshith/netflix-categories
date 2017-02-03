@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extName__",
   "short_name": "__MSG_extShortName__",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "applications": {
     "gecko": {
       "id": "netflix-categories@deekshith.in"
