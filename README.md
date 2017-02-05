@@ -19,7 +19,7 @@ Netflix has a ton of categories but only a few of them are accessible from the w
 ### [✚ Add to Chrome](https://chrome.google.com/webstore/detail/netflix-categories/lnbopcabgddpanjmeabponnjngbmemml) | Chrome Web Store
 Follow [**@adeekshith**](http://twitter.com/adeekshith) on Twitter for updates.
 
-### More
+### On the web
 - [Lifehacker.com: Search Hidden Netflix Categories and Save Your Favorites With This Extension](http://lifehacker.com/search-hidden-netflix-categories-and-save-your-favorite-1791998498)
 - [Product Hunt: Netflix Categories](https://www.producthunt.com/posts/netflix-categories-2)
 
