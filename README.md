@@ -1,8 +1,8 @@
 # [Netflix Categories](https://chrome.google.com/webstore/detail/netflix-categories/lnbopcabgddpanjmeabponnjngbmemml) - Access Netflix Hidden Categories
 
-### [✚ Add to Chrome](https://chrome.google.com/webstore/detail/netflix-categories/lnbopcabgddpanjmeabponnjngbmemml)
+### [✚ Add to Chrome](https://chrome.google.com/webstore/detail/netflix-categories/lnbopcabgddpanjmeabponnjngbmemml) | Chrome Web Store
 
-![Netflix Categories Chrome Extension Screenshot](/design/screenshots/using-netflix-categories.gif)
+[![Netflix Categories Chrome Extension Screenshot](/design/screenshots/using-netflix-categories.gif)](https://chrome.google.com/webstore/detail/netflix-categories/lnbopcabgddpanjmeabponnjngbmemml)
 
 ### What's this?
 
