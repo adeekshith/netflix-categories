@@ -6,7 +6,7 @@
 
 ### What's this?
 
-Netflix has a ton of categories but only a few of them are accessible from the website depending on user's behavior. This browser extension helps to easily access many of the hidden categories. Available for Chrome (coming soon for Firefox).
+Netflix has a ton of categories but only a few of them are accessible from the website depending on user's behavior. This browser extension helps to easily access many of the hidden categories. Available for Chrome (Firefox version coming soon).
 
 ### Features
 - Search for categories
