@@ -21,5 +21,6 @@ Follow [**@adeekshith**](http://twitter.com/adeekshith) on Twitter for updates.
 
 ### More
 - [Lifehacker.com: Search Hidden Netflix Categories and Save Your Favorites With This Extension](http://lifehacker.com/search-hidden-netflix-categories-and-save-your-favorite-1791998498)
+- [Product Hunt: Netflix Categories](https://www.producthunt.com/posts/netflix-categories-2)
 
 Inital categories database forked from [youpinadi/netflix-categories](https://github.com/Youpinadi/netflix-categories/blob/f41701f2c4515dd60293e960c80264f7addaf9b5/README.md)
