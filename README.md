@@ -11,6 +11,7 @@ Netflix has a ton of categories but only a few of them are accessible from the w
 ### Features
 - Search for categories
 - Add To Favorites for easy access
+- Does not run in the background and so does not affect regular browser performance
 
 ### Privacy
 - No extra permissions required
