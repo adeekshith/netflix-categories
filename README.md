@@ -23,5 +23,7 @@ Follow [**@adeekshith**](http://twitter.com/adeekshith) on Twitter for updates.
 ### On the web
 - [Lifehacker.com: Search Hidden Netflix Categories and Save Your Favorites With This Extension](http://lifehacker.com/search-hidden-netflix-categories-and-save-your-favorite-1791998498)
 - [Product Hunt: Netflix Categories](https://www.producthunt.com/posts/netflix-categories-2)
+- [The Next Web: This Netflix extension for Chrome is your shortcut to a ton of hidden categories](https://thenextweb.com/apps/2017/02/06/netflix-plugin-chrome-shortcut/)
+- [The Verge: New Chrome extension helps find all those hidden Netflix categories](http://www.theverge.com/2017/2/6/14520368/netflix-categories-chrome-extension-features)
 
 Inital categories database forked from [youpinadi/netflix-categories](https://github.com/Youpinadi/netflix-categories/blob/f41701f2c4515dd60293e960c80264f7addaf9b5/README.md)
