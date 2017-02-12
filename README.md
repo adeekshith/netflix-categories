@@ -35,5 +35,7 @@ Follow [**@adeekshith**](http://twitter.com/adeekshith) on Twitter for updates.
 - [Tom's Guide \(fr\): Cette extension Chrome affiche toutes les catégories cachées de Netflix](http://www.tomsguide.fr/actualite/afficher-categories-netflix-extension-chrome,55540.html)
 - [PC World: How to browse Netflix's hidden categories](http://www.pcworld.com/article/3166096/software/how-to-browse-netflixs-hidden-categories.html)
 - [The Independent: How to unlock all of Netflix’s hidden categories: Free tool reveals secret genres](http://www.independent.co.uk/life-style/gadgets-and-tech/news/netflix-how-to-unlock-hidden-categories-free-google-chrome-extension-secret-genre-codes-tv-film-a7567196.html)
+- [UPROXX: Finding Thousands Of Secret Netflix Codes Just Got A Whole Lot Easier](http://uproxx.com/technology/netflix-codes-secret-extension/)
+- [MakeUseOf: Browse Netflix’s Secret Categories With This Chrome Extension](http://www.makeuseof.com/tag/browse-netflixs-secret-categories-chrome-extension/)
 
 Inital categories database forked from [youpinadi/netflix-categories](https://github.com/Youpinadi/netflix-categories/blob/f41701f2c4515dd60293e960c80264f7addaf9b5/README.md)
