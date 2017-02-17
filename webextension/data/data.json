@@ -35,6 +35,13 @@
     },
     {
       "category": "NetflixCategories",
+      "name":"Critically-acclaimed Action Thrillers",
+      "api": "http://www.netflix.com/browse/genre/43049",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
       "name": "Adult Animation",
       "api": "http://www.netflix.com/browse/genre/11881",
       "pinned": false,
