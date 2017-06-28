@@ -210,6 +210,41 @@
     },
     {
       "category": "NetflixCategories",
+      "name": "Brazilian Movies",
+      "api": "http://www.netflix.com/browse/genre/798",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Brazilian Comedies",
+      "api": "http://www.netflix.com/browse/genre/17648",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Brazilian Documentaries",
+      "api": "http://www.netflix.com/browse/genre/28269",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Brazilian Dramas",
+      "api": "http://www.netflix.com/browse/genre/4425",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
+      "name": "Brazilian TV Shows",
+      "api": "http://www.netflix.com/browse/genre/69624",
+      "pinned": false,
+      "last_used":0
+    },
+    {
+      "category": "NetflixCategories",
       "name": "British Movies",
       "api": "http://www.netflix.com/browse/genre/10757",
       "pinned": false,
