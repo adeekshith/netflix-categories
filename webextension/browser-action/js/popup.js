@@ -111,17 +111,23 @@ function restorePopupOptions (thisUserConfig) {
             return pinnedSearchNodeHtml;
         }
 
-        let pinnedSearchListingHTML =
-            (filterType == "searchInput"?
-                thisUserConfig.getSearchEnginesBySearchMatch(document.getElementById(searchInputID).value):
-                thisUserConfig.getSearchEnginesPinned())
-            .reduce((previousHtml, searchEngineItem) => {
-                return previousHtml+generateSearchEnginePinnedListNode(searchEngineItem);
-            }, "");
+        let pinnedSearchListingFrag = document.createDocumentFragment();
+        (filterType == "searchInput" ?
+            thisUserConfig.getSearchEnginesBySearchMatch(document.getElementById(searchInputID).value) :
+            thisUserConfig.getSearchEnginesPinned())
+            .forEach((searchEngineItem) => {
+                pinnedSearchListingFrag.appendChild(document.createRange().createContextualFragment(generateSearchEnginePinnedListNode(searchEngineItem)));
+            });
 
         let pinnedSearchEngineListNode = document.getElementById(parentID);
+        while (pinnedSearchEngineListNode.firstChild) { // Delete all children previously rendered
+            pinnedSearchEngineListNode.removeChild(pinnedSearchEngineListNode.firstChild);
+        }
         if (pinnedSearchEngineListNode !== null) {
-            pinnedSearchEngineListNode.innerHTML = pinnedSearchListingHTML+(filterType == "searchInput"?"":allCategoriesListItem);
+            if (filterType !== "searchInput") {
+                pinnedSearchListingFrag.appendChild(document.createRange().createContextualFragment(allCategoriesListItem));
+            }
+            pinnedSearchEngineListNode.appendChild(pinnedSearchListingFrag);
             if (!popupEventListenerAddedFlag) { // Hack to prevent registering event multiple times
                 document.getElementById(parentID).addEventListener("click", processPinnedSearchListingButtonClick);
                 popupEventListenerAddedFlag = !popupEventListenerAddedFlag;
