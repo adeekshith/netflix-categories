@@ -51,20 +51,27 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
         }
     }
 
-        function generateSearchEngineListNodes(searchEngineList) {
-            return searchEngineList.reduce((listHTML, searchEngineItem) => {
-                return listHTML +
-                    `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="list-group-item">
-                        ${searchEngineItem.name}
-                        <span class="pull-right">
-                            <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-heart": "fa-heart-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
-                            title=${searchEngineItem.pinned? "Unfavorite": "Favorite"}></i>
-                        </span>
-                     </a>`;
-            },"");
-        }
+    function generateSearchEngineListNodes(searchEngineList) {
+        let searchEngineListFrag = document.createDocumentFragment();
+        searchEngineList.forEach(searchEngineItem => {
+            searchEngineListFrag.appendChild(document.createRange().createContextualFragment(
+                `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="list-group-item">
+                     ${searchEngineItem.name}
+                     <span class="pull-right">
+                         <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-heart": "fa-heart-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
+                             title=${searchEngineItem.pinned? "Unfavorite": "Favorite"}></i>
+                     </span>
+                 </a>`
+            ));
+        });
+        return searchEngineListFrag;
+    }
 
-        document.getElementById("accordion").innerHTML= generateSearchEngineListNodes(thisUserConfig.getSearchEnginesByCategory("NetflixCategories"));
+    let accordionNode = document.getElementById("accordion");
+    while (accordionNode.firstChild) { // Delete all children previously rendered (but we dont expect any previous children)
+        accordionNode.removeChild(accordionNode.firstChild);
+    }
+    accordionNode.appendChild(generateSearchEngineListNodes(thisUserConfig.getSearchEnginesByCategory("NetflixCategories")));
     document.getElementById("accordion").addEventListener("click", processSearchEngineButtonClick);
 
 }
