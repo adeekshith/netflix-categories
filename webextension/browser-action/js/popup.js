@@ -11,9 +11,8 @@ let popupEventListenerAddedFlag = false;
 let searchInputID = "main-search-keyword-input";
 
 const allCategoriesListItem = `
-    <a class="list-group-item" href="popup-list-all-search-engines.html">
-        <span class="glyphicon pull-left" aria-hidden="true" style="color: #CCCCCC"></span>
-        &nbsp;&nbsp;All Categories <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span>
+    <a class="main-pinned-item" href="popup-list-all-search-engines.html">
+        All Categories <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span>
     </a>`;
 
 function getDefPrefsRestorePopupOptions () {
@@ -100,7 +99,7 @@ function restorePopupOptions (thisUserConfig) {
     function renderItemListByType(parentID, filterType) {
         function generateSearchEnginePinnedListNode(searchEngineItem) {
             let pinnedSearchNodeHtml = `
-            <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="list-group-item clearfix" search-id="${searchEngineItem.id}" > ${searchEngineItem.name}
+            <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="main-pinned-item clearfix" search-id="${searchEngineItem.id}" > ${searchEngineItem.name}
                 <span class="pull-right">
                     <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-heart": "fa-heart-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
                     title=${searchEngineItem.pinned? "Unfavorite": "Favorite"}></i>

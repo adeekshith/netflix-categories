@@ -16,6 +16,26 @@ body {
     padding-bottom: 0%;
     margin-bottom: 0px;
 }
+
+.main-pinned-box {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50px;
+}
+
+.main-pinned-item {
+    padding: 10px 5px 5px 10px;
+    color: #555;
+    border-top: 1px solid #ddd;
+    background-color: #FFFFFF;
+}
+
+.main-pinned-item:hover {
+    color: #555;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+
 .icon-link {
     color: #555;
 }
