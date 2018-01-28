@@ -13,8 +13,12 @@ body {
     */
     max-width: 800px;
     min-width: 300px;
-    padding-bottom: 0%;
-    margin-bottom: 0px;
+}
+
+.search-view-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 54px 1fr;
 }
 
 .search-box {
