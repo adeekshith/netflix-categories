@@ -87,6 +87,7 @@ body {
     color: #555;
     border-top: 1px solid #ddd;
     background-color: #FFFFFF;
+    text-decoration: none;
 }
 
 .main-pinned-item:hover {
