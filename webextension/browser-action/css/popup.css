@@ -91,6 +91,7 @@ body {
 
 .main-pinned-item:hover {
     color: #555;
+    cursor: pointer;
     text-decoration: none;
     background-color: #f5f5f5;
 }
