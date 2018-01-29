@@ -1,8 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-    font-size: 120%;
+    font-size: 14px;
     padding-bottom: 0px;
-    margin-bottom: 0px;
+    margin: 0;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #FFFFFF;
 }
 .popup-dimensions {
     /* avoid an excessively wide status text */

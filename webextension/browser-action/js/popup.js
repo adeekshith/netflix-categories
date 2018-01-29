@@ -12,7 +12,7 @@ let searchInputID = "main-search-keyword-input";
 
 const allCategoriesListItem = `
     <a class="main-pinned-item" href="popup-list-all-search-engines.html">
-        All Categories <span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span>
+        All Categories <span class="fa fa-chevron-right pull-right" aria-hidden="true"></span>
     </a>`;
 
 function getDefPrefsRestorePopupOptions () {
