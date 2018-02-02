@@ -93,15 +93,6 @@
     background-color: #f0f0f0;
 }
 
-.icon-link {
-    color: #555;
-}
-.after-header { padding:50px 0px; }
-
 .btn-pin-this-item {
     /*visibility: hidden;*/
-}
-
-.list-group-item:hover .btn-pin-this-item {
-    visibility: visible;
 }
