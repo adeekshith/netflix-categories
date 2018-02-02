@@ -1,0 +1,47 @@
+/* NetflixCategories/BrowserAction/AllCategories
+   Author: Deekshith Allamaneni
+*/
+
+.main-pinned-box {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50px;
+}
+
+.main-pinned-item {
+    display: flex;
+    justify-content: space-between; /* Push category name to left and favorite button to right*/
+
+    padding: 10px 15px;
+    color: #555;
+    border-top: 1px solid #ddd;
+    background-color: #FFFFFF;
+    text-decoration: none;
+}
+
+.main-pinned-item:hover {
+    color: #555;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+
+.pinned-item-category-name {
+    /* Clip text to avoid category name overflowing to next line when name is long */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.app-nav-item {
+    padding-bottom: 10px;
+    background-color: #f5f5f5;
+}
+
+.app-nav-item:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-pin-this-item {
+    /*visibility: hidden;*/
+}
