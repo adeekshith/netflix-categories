@@ -62,6 +62,7 @@
 .main-pinned-item {
     display: flex;
     justify-content: space-between; /* Push category name to left and favorite button to right*/
+    align-items: center;
 
     padding: 10px 15px;
     color: #555;
