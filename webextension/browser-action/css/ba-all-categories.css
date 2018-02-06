@@ -33,9 +33,21 @@
     white-space: nowrap;
 }
 
+.app-nav-box {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50px;
+}
+
 .app-nav-item {
-    padding-bottom: 10px;
+    display: flex;
+    justify-content: start; /* Keep chevron-left and "Back" text to the left*/
+
+    padding: 10px 15px;
+    color: #555;
     background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
 }
 
 .app-nav-item:hover {
