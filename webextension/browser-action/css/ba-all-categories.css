@@ -42,6 +42,7 @@
 .app-nav-item {
     display: flex;
     justify-content: start; /* Keep chevron-left and "Back" text to the left*/
+    align-items: center; /* Vertically align chevron and "Back" text */
 
     padding: 10px 15px;
     color: #555;
