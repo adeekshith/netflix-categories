@@ -1,0 +1,21 @@
+/* Netflix Categories Browser Action Popup Stylesheet
+   Contains common styles used by all Netflix Categories browser action popups
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.popup-dimensions {
+    width: 300px;
+}
+
+body {
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 14px;
+    padding-bottom: 0px;
+    margin: 0;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #FFFFFF;
+}

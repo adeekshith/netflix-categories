@@ -55,7 +55,7 @@ function restoreListAllSearchEnginesPopupOptions (thisUserConfig) {
         let searchEngineListFrag = document.createDocumentFragment();
         searchEngineList.forEach(searchEngineItem => {
             searchEngineListFrag.appendChild(document.createRange().createContextualFragment(
-                `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="list-group-item">
+                `<a id="search-item-open-in-tab-${generateUuid()}" search-id="${searchEngineItem.id}" class="main-pinned-item">
                      ${searchEngineItem.name}
                      <span class="pull-right">
                          <i class="btn btn-sm fa ${searchEngineItem.pinned? "fa-heart": "fa-heart-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"

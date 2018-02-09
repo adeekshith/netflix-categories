@@ -6,35 +6,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="../libs/twbs/bootstrap/dist/css/bootstrap.min.css">
-    <script type="text/javascript" src="../libs/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="./css/ba-popup.css">
     <link rel="stylesheet" href="../libs/FortAwesome/Font-Awesome/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="./css/popup.css">
+</head>
+<body>
+    <div class="search-view-container popup-dimensions">
+        <div class="search-box search-box-with-icon">
+            <i class="fa fa-search search-input-icon"></i>
+            <input id="main-search-keyword-input" type="text" class="search-input" placeholder="Search Netflix Categories" autofocus/>
+        </div>
+        <div id="pinned-search-engines-list" class="main-pinned-box">
+            <!-- Dynamically added nodes -->
+        </div>
+    </div>
 
     <script type="text/javascript" src="../libs/dov-utils.js"></script>
     <script type="text/javascript" src="../core/js/config.js"></script>
-    <script type="text/javascript" src="./js/popup.js"></script>
-</head>
-<body>
-    <div class="panel panel-default popup-dimensions">
-        <div class="panel-heading clearfix">
-            <div class="form-group has-feedback has-feedback-left" style="margin-bottom: 0px;">
-                <i class="glyphicon glyphicon-search form-control-feedback"></i>
-                <input id="main-search-keyword-input" type="text" class="form-control" placeholder="Search Netflix Categories" autofocus/>
-            </div>
-        </div>
-        <div class="panel-body" style="margin: 0px; padding: 0px; padding-bottom: 0px;">
-            <div class="list-group" id="featured-search-engines-list" style="margin-bottom: 0px;">
-                <div id="pinned-search-engines-list">
-                    <!-- Dynamically added nodes -->
-                </div>
-            </div>
-        </div>
-    </div>
     <script type="text/javascript" src="./js/popup.js"></script>
 </body>
 </html>

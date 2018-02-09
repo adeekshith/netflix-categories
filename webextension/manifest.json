@@ -8,8 +8,8 @@
       "id": "netflix-categories@deekshith.in"
     }
   },
-  "minimum_chrome_version": "45.0",
-  "minimum_opera_version": "32.0",
+  "minimum_chrome_version": "63.0",
+  "minimum_opera_version": "50.0",
 
   "default_locale": "en",
   "description": "__MSG_extDescription__",
