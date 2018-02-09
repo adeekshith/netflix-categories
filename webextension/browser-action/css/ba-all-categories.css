@@ -1,6 +1,10 @@
 /* NetflixCategories/BrowserAction/AllCategories
 */
 
+.below-back-btn {
+    padding-top: 43px;
+}
+
 .main-pinned-box {
     display: flex;
     flex-direction: column;
@@ -36,6 +40,9 @@
     display: flex;
     flex-direction: column;
     flex-basis: 50px;
+
+    position: fixed;
+    width: 100%;
 }
 
 .app-nav-item {
