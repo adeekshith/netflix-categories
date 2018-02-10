@@ -1,6 +1,10 @@
 /* NetflixCategories/BrowserAction/AllCategories
 */
 
+.below-back-btn {
+    padding-top: 45px;
+}
+
 .main-pinned-box {
     display: flex;
     flex-direction: column;
@@ -36,6 +40,9 @@
     display: flex;
     flex-direction: column;
     flex-basis: 50px;
+
+    position: fixed;
+    width: 100%;
 }
 
 .app-nav-item {
@@ -43,6 +50,7 @@
     justify-content: start; /* Keep chevron-left and "Back" text to the left*/
     align-items: center; /* Vertically align chevron and "Back" text */
 
+    height: 45px;
     padding: 10px 15px;
     color: #555;
     background-color: #f5f5f5;
