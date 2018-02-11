@@ -12,7 +12,7 @@ let searchInputID = "main-search-keyword-input";
 
 const allCategoriesListItem = `
     <a class="main-pinned-item" href="popup-list-all-search-engines.html">
-        All Categories <span class="fa fa-chevron-right pull-right" aria-hidden="true"></span>
+        All Categories <span class="icon-right-open pull-right" aria-hidden="true"></span>
     </a>`;
 
 function getDefPrefsRestorePopupOptions () {
@@ -102,7 +102,7 @@ function restorePopupOptions (thisUserConfig) {
             <div id="featured-search-item-open-in-tab-block-${searchEngineItem.id}" class="main-pinned-item" search-id="${searchEngineItem.id}">
                 <a id="featured-search-item-open-in-tab-${searchEngineItem.id}" class="pinned-item-category-name" search-id="${searchEngineItem.id}" > ${searchEngineItem.name}
                 </a>
-                <i class="fa ${searchEngineItem.pinned? "fa-heart": "fa-heart-o"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
+                <i class="${searchEngineItem.pinned? "icon-heart": "icon-heart-empty"} btn-pin-this-item" search-id="${searchEngineItem.id}" id="search-item-pinned-toggle-${searchEngineItem.id}"
                     title=${searchEngineItem.pinned? "Unfavorite": "Favorite"}></i>
             </div>
             `;
