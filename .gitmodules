@@ -1,3 +1,0 @@
-[submodule "webextension/libs/FortAwesome/Font-Awesome"]
-	path = webextension/libs/FortAwesome/Font-Awesome
-	url = git@github.com:FortAwesome/Font-Awesome.git
