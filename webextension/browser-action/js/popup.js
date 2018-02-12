@@ -5,6 +5,7 @@
 
 "use strict";
 
+const changelogURL = "https://github.com/adeekshith/netflix-categories#whats-new";
 const minSearchStringLength = 1;
 let popupEventListenerAddedFlag = false;
 
@@ -135,6 +136,15 @@ function restorePopupOptions (thisUserConfig) {
     }
 
     renderItemListByType("pinned-search-engines-list", "pinned");
+
+    /*
+    * Manage Changelog Link Footer
+    * */
+    document.getElementById("changelog-link").addEventListener("click", (thisEvent) => {
+        chrome.tabs.create({
+            url: changelogURL
+        });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
