@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extName__",
   "short_name": "__MSG_extShortName__",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "applications": {
     "gecko": {
       "id": "netflix-categories@deekshith.in"
@@ -20,7 +20,7 @@
   },
 
   "author": "Deekshith Allamaneni",
-  "homepage_url": "http://deekshith.in/",
+  "homepage_url": "https://github.com/adeekshith/netflix-categories",
   "browser_action": {
     "default_icon": "images/brand/128.png",
     "default_popup": "browser-action/popup.html",
