@@ -30,6 +30,10 @@ Netflix has a ton of categories but only a few of them are accessible from the w
   + Fixes unwanted rounding and borders around category list items
   + Fixes vertical alignments of text and icons in navigation and category list buttons
 
+#### v0.1.1
+- Search hundreds of hidden categories
+- Add to favorites for easy access
+
 Follow [**@adeekshith**](http://twitter.com/adeekshith) on Twitter for updates.
 
 ### On the web
