@@ -32,6 +32,13 @@ function getDefPrefsRestorePopupOptions () {
 
 
 function restorePopupOptions (thisUserConfig) {
+    function saveThisUserConfig() {
+        chrome.storage.local.set({
+            user_config: JSON.stringify(thisUserConfig.getPreferences())
+        }, function () {
+        });
+    }
+
     function processPinnedSearchListingButtonClick(thisEvent) {
         if (thisEvent.target !== thisEvent.currentTarget) {
             let searchButtonID = thisEvent.target.id;
@@ -141,8 +148,14 @@ function restorePopupOptions (thisUserConfig) {
     * Manage Changelog Link Footer
     * */
     document.getElementById("changelog-link").addEventListener("click", (thisEvent) => {
-        chrome.tabs.create({
-            url: changelogURL
+        // After changelog link is clicked once, set this version as last viewed changelog
+        // so that the changelog footer is not showed next time BA popup is opened
+        chrome.management.getSelf((extensionInfo) => {
+            thisUserConfig.setChangelogVersionViewed(extensionInfo.version);
+            saveThisUserConfig();
+            chrome.tabs.create({
+                url: changelogURL
+            });
         });
     });
 
