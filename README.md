@@ -20,9 +20,15 @@ Netflix has a ton of categories but only a few of them are accessible from the w
 ### [✚ Add to Chrome](https://chrome.google.com/webstore/detail/netflix-categories/lnbopcabgddpanjmeabponnjngbmemml) | Chrome Web Store
 
 ### What's New
+#### v0.3.1
+- More speed improvements (avg load time from 55 ms to 49 ms)
+- Half the size of v0.2.0 and less than 1/4th size of v0.1.1 (~ 203 kB to 47 kB)
+  by replacing FontAwesome icons with Fontello
+- Footer with link to "Whats new" appears only when there is a version change and disappears once clicked
+
 #### v0.2.0
 - 2x faster (Browser action popup load time from 101 ms to 55 ms)
-- Size reduced by about 50% (~ 200 kB to ~ 100 kB)
+- Size reduced by about 50% (~ 203 kB to ~ 103 kB)
 - Fixes error caused by loading popup.js in popup.html multiple times (bug #3, SHA c9abed0 , PR # 8)
 - Use DocumentFragment to create and append DOM nodes instead of manipulating raw HTML (PR #6)
 - Remove dependencies Bootstrap and JQuery (PR #8)
