@@ -18,6 +18,18 @@ Netflix has a ton of categories but only a few of them are accessible from the w
 - No data is sent or received by the extension
 
 ### [✚ Add to Chrome](https://chrome.google.com/webstore/detail/netflix-categories/lnbopcabgddpanjmeabponnjngbmemml) | Chrome Web Store
+
+### What's New
+#### v0.2.0
+- 2x faster (Browser action popup load time from 101 ms to 55 ms)
+- Size reduced by about 50% (~ 200 kB to ~ 100 kB)
+- Fixes error caused by loading popup.js in popup.html multiple times (bug #3, SHA c9abed0 , PR # 8)
+- Use DocumentFragment to create and append DOM nodes instead of manipulating raw HTML (PR #6)
+- Remove dependencies Bootstrap and JQuery (PR #8)
+  + Replaced Bootstrap with CSS Grid, Flexbox for the layout and other custom CSS for styling components.
+  + Fixes unwanted rounding and borders around category list items
+  + Fixes vertical alignments of text and icons in navigation and category list buttons
+
 Follow [**@adeekshith**](http://twitter.com/adeekshith) on Twitter for updates.
 
 ### On the web
