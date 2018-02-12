@@ -82,6 +82,13 @@ UserConfig.prototype.setInitialSetupCompleted = function (isCompletedFlag) {
     this.userPreferencesJSON_.user_data.completed_initial_setup = isCompletedFlag;
 };
 
+UserConfig.prototype.getChangelogVersionViewed = function () {
+    return this.userPreferencesJSON_.user_data.changelog_version_viewed;
+};
+UserConfig.prototype.setChangelogVersionViewed = function (thisVersion) {
+    this.userPreferencesJSON_.user_data.changelog_version_viewed = thisVersion;
+};
+
 UserConfig.prototype.assignUniqueIDsToAllSearchEngines = function () {
     return this.userPreferencesJSON_.search_engines
         .map(eachSearchEngine => {

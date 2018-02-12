@@ -2,7 +2,7 @@
 .search-view-container {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 54px 1fr;
+    grid-template-rows: 54px 1fr min-content;
 }
 
 .search-box {
@@ -96,4 +96,21 @@
 
 .btn-pin-this-item {
     /*visibility: hidden;*/
+}
+
+footer {
+    font-size: x-small;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    color: #555;
+    cursor: pointer;
+}
+
+footer:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+#changelog-link {
+    display: none;
 }
