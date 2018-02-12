@@ -61,10 +61,7 @@ function restorePopupOptions (thisUserConfig) {
                     renderItemListByType("pinned-search-engines-list", "pinned");
                 }
 
-                chrome.storage.local.set({
-                    user_config: JSON.stringify(thisUserConfig.getPreferences())
-                }, function () {
-                });
+                saveThisUserConfig();
             }
         }
     }
@@ -76,10 +73,7 @@ function restorePopupOptions (thisUserConfig) {
         thisUserConfig.assignUniqueIDsToAllSearchEngines();
         thisUserConfig.setInitialSetupCompleted(true);
 
-        chrome.storage.local.set({
-            user_config: JSON.stringify(thisUserConfig.getPreferences())
-        }, function () {
-        });
+        saveThisUserConfig();
     }
 
     /**
