@@ -145,6 +145,22 @@ function restorePopupOptions (thisUserConfig) {
             url: changelogURL
         });
     });
+
+    function showChangelogLinkFooter(changelogLinkID) {
+        document.getElementById(changelogLinkID).style.display = "inherit";
+    }
+
+    let changelogViewedVersion = thisUserConfig.getChangelogVersionViewed();
+    if (changelogViewedVersion !== null && changelogViewedVersion !== undefined) {
+        chrome.management.getSelf((extensionInfo) => {
+            let majorViewedVersion = changelogViewedVersion.slice(0, changelogViewedVersion.lastIndexOf("."));
+            if (!extensionInfo.version.startsWith(majorViewedVersion)) {
+                showChangelogLinkFooter("changelog-link");
+            }
+        });
+    } else {
+        showChangelogLinkFooter("changelog-link");
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
